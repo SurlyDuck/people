@@ -1,0 +1,1 @@
+magick ./output/raw_renders/ThinWall0.png -background #FE01FD -alpha remove -remap pallete.png ThinWall0.png

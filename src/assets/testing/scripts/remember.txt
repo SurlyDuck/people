@@ -1,0 +1,1 @@
+magick image.png -crop 3@x2@ parts-%02d.png

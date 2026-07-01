@@ -1,4 +1,4 @@
-
+#!/bin/bash
 
 if [[ "$#" < 3 ]]; then
 	echo "Usage: ./sheet /directory_containing_images /output_directory /pallete.png"
@@ -44,9 +44,10 @@ magick montage -geometry 128x128 "${granular_1_files[@]}" "$2/montage_pallete1.p
 magick montage -geometry 128x128 "${granular_2_files[@]}" "$2/montage_pallete2.png"
 magick montage -geometry 128x128 "${granular_3_files[@]}" "$2/montage_pallete3.png"
 
-echo -n "delete granular temp files?[y/n]: "
+echo -n "delete temp files?[y/n]: "
 read -r ans
-if [[ "$ans" == "y" || "$ans" == "N" ]] then
+if [[ "$ans" == "y" || "$ans" == "N" ]]; then
+	echo "deleting files..."
 	rm -R "$granular_1_pallete" "$granular_2_pallete" "$granular_3_pallete" 
 fi
 
